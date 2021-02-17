@@ -1,13 +1,9 @@
 <template>
-  <p>this is uno</p>
+  <p>this is unowrwrwrwrwrwrwr</p>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
-<style>
-
-</style>
+<style></style>
