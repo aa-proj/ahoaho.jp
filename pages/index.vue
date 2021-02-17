@@ -1,63 +1,69 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <h1 class="title">ahoaho.jp</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <img
+        id="index-icon"
+        src="https://cdn.discordapp.com/attachments/606109479003750442/811564657265475584/discord_.png"
+      />
     </div>
+    <p>八田に考えてもらう文章</p>
+    <user-button
+      v-for="(item, index) in names"
+      :key="index"
+      :name="item.name"
+      :link="item.url"
+    />
   </div>
 </template>
 
 <script>
-export default {}
+import UserButton from '~/components/UserButton.vue'
+export default {
+  components: { UserButton },
+
+  data() {
+    return {
+      names: [
+        {
+          name: 'UNo',
+          url: '/user/uno',
+        },
+        {
+          name: 'Kokoa',
+          url: '/user/kokoa',
+        },
+      ],
+    }
+  },
+}
 </script>
 
-<style>
+<style scoped>
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
   text-align: center;
+  background-image: url('/images/HomeBack.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 100px;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+#index-icon {
+  width: 100px;
+  padding-top: 15vh;
+  padding-bottom: 30vh;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+p {
+  font-size: 3em;
+  color: rgb(236, 241, 255);
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
-.links {
-  padding-top: 15px;
+h1 {
+  font-size: 6em;
+  color: rgb(236, 241, 255);
+  padding-top: 15vh;
 }
 </style>

@@ -1,5 +1,8 @@
 <template>
-  <p>this is unowrwrwrwrwrwrwr</p>
+  <div>
+    <nuxt-link to="/">homeにもどる</nuxt-link>
+    <p>this is unowrwrwrwrwrwrwr</p>
+  </div>
 </template>
 
 <script>
