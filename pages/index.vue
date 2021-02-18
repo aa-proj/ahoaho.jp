@@ -6,13 +6,21 @@
         src="https://cdn.discordapp.com/attachments/606109479003750442/811564657265475584/discord_.png"
       />
     </div>
-    <p>八田に考えてもらう文章</p>
-    <user-button
-      v-for="(item, index) in names"
-      :key="index"
-      :name="item.name"
-      :link="item.url"
-    />
+    <p id="catch">マッチを飲み過ぎない世界へ</p>
+    <div class="users-box">
+      <user-button
+        v-for="(item, index) in names"
+        :key="index"
+        :name="item.name"
+        :link="item.url"
+      />
+    </div>
+    <div class="bottom-box">
+      <div class="signature">
+        <p>@discord</p>
+        <p>@toiawasesaki@Kokoa</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -45,25 +53,43 @@ export default {
   background-image: url('/images/HomeBack.jpg');
   background-size: cover;
   background-attachment: fixed;
-  padding-bottom: 100px;
+}
+.users-box {
+  width: 90%;
+  background-color: rgba(238, 247, 255, 0.1);
+  margin: auto;
+  padding: 100px;
 }
 
 #index-icon {
   width: 100px;
   padding-top: 15vh;
-  padding-bottom: 30vh;
+  padding-bottom: 15vh;
 }
 
-p {
+#catch {
   font-size: 3em;
   color: rgb(236, 241, 255);
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  padding-bottom: 10vh;
 }
 
 h1 {
   font-size: 6em;
   color: rgb(236, 241, 255);
   padding-top: 15vh;
+}
+
+.bottom-box {
+  background-color: black;
+  margin-bottom: 0;
+  margin-top: 100px;
+  padding: 50px;
+}
+.signature {
+}
+
+p {
+  color: white;
+  font-size: 15px;
 }
 </style>
