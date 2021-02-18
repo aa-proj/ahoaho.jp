@@ -25,5 +25,5 @@ jobs:
         with:
           command: /bin/bash /home/neo/ahoaho/deploy.sh
           host: ${{ secrets.HOST }}
-          username: garygrossgarten
+          username: neo
           privateKey: ${{ secrets.PRIVATE_KEY}}
