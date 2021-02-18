@@ -8,24 +8,20 @@
     </div>
     <p id="catch">マッチを飲み過ぎない世界へ</p>
     <div class="users-box">
-      <user-button
-        v-for="(item, index) in names"
-        :key="index"
-        :name="item.name"
-        :link="item.url"
-      />
+      <user-button v-for="(item, index) in names" :key="index" :item="item" />
     </div>
-    <div class="bottom-box">
+    <div class="footer">
       <div class="signature">
-        <p>@discord</p>
-        <p>@toiawasesaki@Kokoa</p>
+        <p>
+          ©aa-proj 2020-2021 <a href="https://github.com/aa-proj">GitHub</a>
+        </p>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import UserButton from '~/components/UserButton.vue'
+
 export default {
   components: { UserButton },
 
@@ -35,10 +31,12 @@ export default {
         {
           name: 'UNo',
           url: '/user/uno',
+          icon: '/images/uno-avatar.jpg',
         },
         {
           name: 'Kokoa',
           url: '/user/kokoa',
+          icon: '/images/kokoa-avatar.png',
         },
       ],
     }
@@ -54,6 +52,7 @@ export default {
   background-size: cover;
   background-attachment: fixed;
 }
+
 .users-box {
   width: 90%;
   background-color: rgba(238, 247, 255, 0.1);
@@ -79,13 +78,16 @@ h1 {
   padding-top: 15vh;
 }
 
-.bottom-box {
+.footer {
   background-color: black;
   margin-bottom: 0;
   margin-top: 100px;
   padding: 50px;
 }
-.signature {
+
+.signature a {
+  color: #b8b8b8;
+  text-decoration: none;
 }
 
 p {
