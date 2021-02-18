@@ -1,13 +1,12 @@
 <template>
-  <p>this is uno</p>
+  <div>
+    <nuxt-link to="/">homeにもどる</nuxt-link>
+    <p>this is unowrwrwrwrwrwrwr</p>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -1,63 +1,95 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <h1 class="title">ahoaho.jp</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+      <img
+        id="index-icon"
+        src="https://cdn.discordapp.com/attachments/606109479003750442/811564657265475584/discord_.png"
+      />
+    </div>
+    <p id="catch">マッチを飲み過ぎない世界へ</p>
+    <div class="users-box">
+      <user-button
+        v-for="(item, index) in names"
+        :key="index"
+        :name="item.name"
+        :link="item.url"
+      />
+    </div>
+    <div class="bottom-box">
+      <div class="signature">
+        <p>@discord</p>
+        <p>@toiawasesaki@Kokoa</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import UserButton from '~/components/UserButton.vue'
+export default {
+  components: { UserButton },
+
+  data() {
+    return {
+      names: [
+        {
+          name: 'UNo',
+          url: '/user/uno',
+        },
+        {
+          name: 'Kokoa',
+          url: '/user/kokoa',
+        },
+      ],
+    }
+  },
+}
 </script>
 
-<style>
+<style scoped>
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
   text-align: center;
+  background-image: url('/images/HomeBack.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+.users-box {
+  width: 90%;
+  background-color: rgba(238, 247, 255, 0.1);
+  margin: auto;
+  padding: 100px;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+#index-icon {
+  width: 100px;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+#catch {
+  font-size: 3em;
+  color: rgb(236, 241, 255);
+  padding-bottom: 10vh;
 }
 
-.links {
-  padding-top: 15px;
+h1 {
+  font-size: 6em;
+  color: rgb(236, 241, 255);
+  padding-top: 15vh;
+}
+
+.bottom-box {
+  background-color: black;
+  margin-bottom: 0;
+  margin-top: 100px;
+  padding: 50px;
+}
+.signature {
+}
+
+p {
+  color: white;
+  font-size: 15px;
 }
 </style>
