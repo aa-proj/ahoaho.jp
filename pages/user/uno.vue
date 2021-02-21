@@ -1,13 +1,19 @@
 <template>
-  <p>this is uno2222222222</p>
+  <div class="container">
+    <img src="" />
+    <p>UNo</p>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
-<style>
-
+<style scoped>
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
 </style>
