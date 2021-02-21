@@ -69,7 +69,13 @@ img {
   border-width: 5px;
   border-color: rgb(255, 255, 255);
   //border: groove;
-  background-color: rgba(240, 240, 255, 0);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    95%,
+    rgba(143, 143, 143, 0.2)
+  );
+  //background-color: rgba(240, 240, 255, 0);
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 100px;
