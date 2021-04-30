@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <nuxt-link to="/">homeにもどる</nuxt-link>
-    <p>this is unowrwrwrwrwrwrwr</p>
+  <div class="container">
+    <img src="" />
+    <p>UNo</p>
   </div>
 </template>
 
@@ -9,4 +9,11 @@
 export default {}
 </script>
 
-<style></style>
+<style scoped>
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+</style>
