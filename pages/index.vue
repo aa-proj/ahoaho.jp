@@ -1,16 +1,25 @@
 <template>
   <div class="container">
-    <!--
+    <section>
+      <!--
     <img id="ImgBlur" src="/images/HomeBackBlur.png" />
     -->
-    <div>
-      <img id="index-icon" src="/images/sample-icon.png" />
-    </div>
+      <div>
+        <img id="index-icon" src="/images/sample-icon.png" />
+      </div>
 
-    <p id="catch">マッチを飲み過ぎない世界へ</p>
-    <div class="users-box">
-      <user-button v-for="(item, index) in names" :key="index" :item="item" />
-    </div>
+      <p id="catch">マッチを飲み過ぎない世界へ</p>
+      <div class="base-buttons">
+        <base-button
+          v-for="(item, index) in bases"
+          :key="index"
+          :name="item.name"
+        />
+      </div>
+      <div class="users-box">
+        <user-button v-for="(item, index) in names" :key="index" :item="item" />
+      </div>
+    </section>
     <div class="footer">
       <div class="signature">
         <p>
@@ -21,10 +30,11 @@
   </div>
 </template>
 <script>
+import BaseButton from '~/components/BaseButton.vue'
 import UserButton from '~/components/UserButton.vue'
 
 export default {
-  components: { UserButton },
+  components: { UserButton, BaseButton },
 
   data() {
     return {
@@ -40,6 +50,14 @@ export default {
           icon: '/images/kokoa-avatar.png',
         },
       ],
+      bases: [
+        {
+          name: 'sleeptime',
+        },
+        {
+          name: 'board',
+        },
+      ],
     }
   },
 }
@@ -52,7 +70,19 @@ export default {
   background-image: url('/images/HomeBack.png');
   background-size: cover;
   background-attachment: fixed;
+  background-position: center center;
 }
+section {
+  width: 720px;
+  margin: auto;
+}
+
+.base-buttons {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
 #ImgBlur {
   width: 100%;
   position: fixed;
@@ -61,12 +91,9 @@ export default {
 }
 
 .users-box {
-  width: 90%;
-  background-color: rgba(32, 32, 32, 0.5);
-  margin: auto;
-  margin-top: 300px;
-  padding: 100px;
+  background-color: rgba(32, 32, 32, 0.7);
   border-radius: 70px;
+  padding-bottom: 50px;
   box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
 }
 

@@ -21,21 +21,16 @@ export default {
 
 <style scoped lang="scss">
 .user-button {
-  width: 1000px;
   text-decoration: none;
   margin: auto;
-  padding-top: 100px;
-  margin-bottom: 200px;
-  margin-left: 150px;
+  padding-top: 50px;
   display: flex;
   justify-content: center;
 }
 
 .user-image {
-  width: 200px;
-  height: 200px;
   background-color: rgba(240, 240, 255, 0);
-  margin: 20px;
+  margin: 30px;
 }
 
 img {
@@ -43,8 +38,8 @@ img {
 }
 
 .user-image img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 100px;
 }
 
@@ -63,8 +58,10 @@ img {
 }
 
 .button-box {
-  width: 800px;
-  height: 200px;
+  width: auto;
+  height: 150px;
+  margin: auto;
+  margin-right: 50px;
   border-right: solid;
   border-width: 5px;
   border-color: rgb(255, 255, 255);
@@ -73,13 +70,9 @@ img {
     to right,
     rgba(255, 255, 255, 0),
     95%,
-    rgba(143, 143, 143, 0.2)
+    rgba(143, 143, 143, 0.3)
   );
   //background-color: rgba(240, 240, 255, 0);
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 100px;
-  padding-right: 100px;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0);
 }
 
