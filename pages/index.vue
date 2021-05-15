@@ -52,7 +52,7 @@ export default {
          {
           name: 'ao',
           url: '/user/',
-          icon: '/images/-lkxQu2N_400x400.jpg,
+          icon: '/images/-lkxQu2N_400x400.jpg',
         },
       ],
       bases: [
