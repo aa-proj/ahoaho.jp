@@ -49,6 +49,11 @@ export default {
           url: '/user/kokoa',
           icon: '/images/kokoa-avatar.png',
         },
+         {
+          name: 'ao',
+          url: '/user/',
+          icon: '/images/-lkxQu2N_400x400.jpg,
+        },
       ],
       bases: [
         {
