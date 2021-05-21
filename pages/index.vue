@@ -1,35 +1,22 @@
-<template>
-  <div class="container">
-    <section>
-      <!--
-    <img id="ImgBlur" src="/images/HomeBackBlur.png" />
-    -->
-      <div style="height: 100vh">
-        <div>
-          <img id="index-icon" src="/images/sample-icon.png" />
-        </div>
-
-        <p id="catch">マッチを飲み過ぎない世界へ</p>
-      </div>
-      <div class="base-buttons">
-        <base-button
-          v-for="(item, index) in bases"
-          :key="index"
-          :name="item.name"
-        />
-      </div>
-      <div class="users-box">
-        <user-button v-for="(item, index) in names" :key="index" :item="item" />
-      </div>
-    </section>
-    <div class="footer">
-      <div class="signature">
-        <p>
-          ©aa-proj 2020-2021 <a href="https://github.com/aa-proj">GitHub</a>
-        </p>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  div.container
+    section
+      div.full-height
+        div
+          img#index-icon(src="/images/sample-icon.png")
+        p#catch マッチを飲みすぎない世界へ
+      div.full-height
+        h1 our mission
+        hr
+        h1 none
+      div.base-buttons
+        base-button(v-for="(item,index) in bases" :key="index" :name="item.name")
+      div.users-box
+        user-button(v-for="(item,index) in names" :key="index" :item="item")
+    div.footer
+      div.signature
+        p ©aa-proj 2020-2021
+          a(href="https://github.com/aa-proj") GitHub
 </template>
 <script>
 import BaseButton from '~/components/BaseButton.vue'
@@ -71,6 +58,15 @@ export default {
 </script>
 
 <style scoped>
+.full-height {
+  height: 100vh;
+}
+
+h1 {
+  text-shadow: black;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.7));
+}
+
 .container {
   width: 100%;
   text-align: center;
@@ -123,7 +119,6 @@ section {
 h1 {
   font-size: 6em;
   color: rgb(236, 241, 255);
-  padding-top: 15vh;
 }
 
 .footer {
