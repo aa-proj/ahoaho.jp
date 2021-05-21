@@ -1,15 +1,25 @@
 <template>
   <div class="container">
-    <div>
-      <img
-        id="index-icon"
-        src="https://cdn.discordapp.com/attachments/606109479003750442/811564657265475584/discord_.png"
-      />
-    </div>
-    <p id="catch">マッチを飲み過ぎない世界へ</p>
-    <div class="users-box">
-      <user-button v-for="(item, index) in names" :key="index" :item="item" />
-    </div>
+    <section>
+      <!--
+    <img id="ImgBlur" src="/images/HomeBackBlur.png" />
+    -->
+      <div>
+        <img id="index-icon" src="/images/sample-icon.png" />
+      </div>
+
+      <p id="catch">マッチを飲み過ぎない世界へ</p>
+      <div class="base-buttons">
+        <base-button
+          v-for="(item, index) in bases"
+          :key="index"
+          :name="item.name"
+        />
+      </div>
+      <div class="users-box">
+        <user-button v-for="(item, index) in names" :key="index" :item="item" />
+      </div>
+    </section>
     <div class="footer">
       <div class="signature">
         <p>
@@ -20,10 +30,11 @@
   </div>
 </template>
 <script>
+import BaseButton from '~/components/BaseButton.vue'
 import UserButton from '~/components/UserButton.vue'
 
 export default {
-  components: { UserButton },
+  components: { UserButton, BaseButton },
 
   data() {
     return {
@@ -38,6 +49,19 @@ export default {
           url: '/user/kokoa',
           icon: '/images/kokoa-avatar.png',
         },
+         {
+          name: 'ao',
+          url: '/user/',
+          icon: '/images/-lkxQu2N_400x400.jpg',
+        },
+      ],
+      bases: [
+        {
+          name: 'sleeptime',
+        },
+        {
+          name: 'board',
+        },
       ],
     }
   },
@@ -48,28 +72,50 @@ export default {
 .container {
   width: 100vw;
   text-align: center;
-  background-image: url('/images/HomeBack.jpg');
+  background-image: url('/images/HomeBack.png');
   background-size: cover;
   background-attachment: fixed;
+  background-position: center center;
+}
+section {
+  width: 720px;
+  margin: auto;
+}
+
+.base-buttons {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+#ImgBlur {
+  width: 100%;
+  position: fixed;
+  opacity: 0;
+  left: 0;
 }
 
 .users-box {
-  width: 90%;
-  background-color: rgba(238, 247, 255, 0.1);
-  margin: auto;
-  padding: 100px;
+  background-color: rgba(32, 32, 32, 0.7);
+  border-radius: 70px;
+  padding-bottom: 50px;
+  box-shadow: 0px 0px 10px rgba(68, 68, 68, 0.5);
 }
 
 #index-icon {
-  width: 100px;
-  padding-top: 15vh;
-  padding-bottom: 15vh;
+  width: 300px;
+  padding-top: 25vh;
+  padding-bottom: 6vh;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }
 
 #catch {
   font-size: 3em;
+  font-family: serif;
   color: rgb(236, 241, 255);
   padding-bottom: 10vh;
+  text-shadow: black;
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.7));
 }
 
 h1 {
