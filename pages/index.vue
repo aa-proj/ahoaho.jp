@@ -4,11 +4,13 @@
       <!--
     <img id="ImgBlur" src="/images/HomeBackBlur.png" />
     -->
-      <div>
-        <img id="index-icon" src="/images/sample-icon.png" />
-      </div>
+      <div style="height: 100vh">
+        <div>
+          <img id="index-icon" src="/images/sample-icon.png" />
+        </div>
 
-      <p id="catch">マッチを飲み過ぎない世界へ</p>
+        <p id="catch">マッチを飲み過ぎない世界へ</p>
+      </div>
       <div class="base-buttons">
         <base-button
           v-for="(item, index) in bases"
@@ -70,7 +72,7 @@ export default {
 
 <style scoped>
 .container {
-  width: 100vw;
+  width: 100%;
   text-align: center;
   background-image: url('/images/HomeBack.jpg');
   background-size: cover;
