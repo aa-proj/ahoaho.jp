@@ -1,16 +1,19 @@
 <template lang="pug">
   div.container
     section
+      div.header
+        HeaderButton(label="login")
       div.full-height
         div
           img#index-icon(src="/images/sample-icon.png")
         p#catch マッチを飲みすぎない世界へ
-      div.full-height
-        h1 our mission
+      div.box
+        h2 our mission
         hr
         h1 none
-      div.base-buttons
+      // div.base-buttons
         base-button(v-for="(item,index) in bases" :key="index" :name="item.name")
+      h2 members
       div.users-box
         user-button(v-for="(item,index) in names" :key="index" :item="item")
     div.footer
@@ -19,11 +22,12 @@
           a(href="https://github.com/aa-proj") GitHub
 </template>
 <script>
-import BaseButton from '~/components/BaseButton.vue'
-import UserButton from '~/components/UserButton.vue'
+import BaseButton from '~/components/Button/BaseButton.vue'
+import UserButton from '~/components/Button/UserButton.vue'
+import HeaderButton from '~/components/Button/HeaderButton'
 
 export default {
-  components: { UserButton, BaseButton },
+  components: { HeaderButton, UserButton, BaseButton },
 
   data() {
     return {
@@ -61,8 +65,16 @@ export default {
 .full-height {
   height: 100vh;
 }
+.box {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.header {
+  height: 80px;
+}
 
-h1 {
+h1,
+h2 {
   text-shadow: black;
   filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.7));
 }
@@ -118,6 +130,11 @@ section {
 
 h1 {
   font-size: 6em;
+  color: rgb(236, 241, 255);
+}
+
+h2 {
+  font-size: 4em;
   color: rgb(236, 241, 255);
 }
 
