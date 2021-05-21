@@ -49,7 +49,7 @@ export default {
           url: '/user/kokoa',
           icon: '/images/kokoa-avatar.png',
         },
-         {
+        {
           name: 'ao',
           url: '/user/',
           icon: '/images/-lkxQu2N_400x400.jpg',
@@ -72,7 +72,7 @@ export default {
 .container {
   width: 100vw;
   text-align: center;
-  background-image: url('/images/HomeBack.png');
+  background-image: url('/images/HomeBack.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
