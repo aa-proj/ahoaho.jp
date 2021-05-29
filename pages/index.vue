@@ -51,7 +51,7 @@ export default {
         },
          {
           name: 'ao',
-          url: 'https://twitter.com/ao_iapro',
+          url: '/user/ao',
           icon: '/images/-lkxQu2N_400x400.jpg',
         },
       ],
