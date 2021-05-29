@@ -51,7 +51,7 @@ export default {
         },
          {
           name: 'ao',
-          url: '/user/namari-by-shapingrain/index/',
+          url: '/user/ao/',
           icon: '/images/-lkxQu2N_400x400.jpg',
         },
       ],
